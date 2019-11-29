@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Busqueda</title>
+    <title>Rest API con Flask</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -32,11 +32,11 @@
         <h4>Obtener registros</h4>
         <p>debe enviar los siguientes campos para filtrar con el metodo "GET", todos son opcionales</p>
         <span>limit, id, nombre, puesto</span>
-        <p>ejemplo: <pre>http://18.220.137.233:5000/ver?limit=10</pre></p>
+        <p>ejemplo: <pre><span class="url"></span>ver?limit=10</pre></p>
         <h3>Insertar registro</h3>
         <p>Debe enviar una peticion tipo "POST" enviando un json con uno o mas registros a insertar </p>
         <pre>ejemplo:
-            http://18.220.137.233:5000/agregar
+            <span class="url"></span>agregar
                 [{
                     "nombre": "lupita",
                     "fecha_nacimiento": "10-02-1990",
@@ -51,7 +51,7 @@
         <p>Debe enviar una peticion tipo "PUT" enviando un json con los datos y id de la persona a modificar</p>
         <pre>
         ejemplo: 
-        http://18.220.137.233:5000/modificar
+        <span class="url"></span>modificar
                 [{
                     "id"= 5,
                     "nombre": "lupita",
@@ -64,13 +64,19 @@
         <p>Debe enviar una peticion tipo "DELETE" enviando id de la persona a modificar</p>
         <pre>
             ejemplo:
-            http://18.220.137.233:5000/eliminar?id=1
+            <span class="url"></span>eliminar?id=1
         </pre>
     </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+     $(document).ready(function(){
+        var ruta = $(location).attr('href');
+        $(".url").html(ruta);
+     })
+    </script>
 </body>
 
 </html>
